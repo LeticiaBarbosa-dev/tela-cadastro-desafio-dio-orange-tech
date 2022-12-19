@@ -21,14 +21,35 @@ export function Input({
     <>
       <div className="w-[100%] max-w-[275px] h-[30px] border-b-[1px] border-[#383450] flex items-center mb-[20px]">
         {leftIcon === "user" ? (
-          <User />
+          <User
+          color="#8647ad" className="mr-[10px]"
+          />
         ) : leftIcon === "email" ? (
-          <Envelope />
+          <Envelope
+          color="#8647ad" 
+            className="mr-[10px]"
+          />
         ) : leftIcon === "senha" ? (
-          <Lock />
+          <Lock
+          color="#8647ad" 
+            className="mr-[10px]"
+          />
         ) : null}
         <div className="mr-[10px]">
-            <Controller name={name} control={control} rules={{required: true}} render={({field: {value, onChange}}) => <input placeholder={placeholder} value={value} onChange={onChange} {...rest} className="bg-transparent text-white border-0 h-[30px] w-[100%]" />} />
+          <Controller
+            name={name}
+            control={control}
+            rules={{ required: true }}
+            render={({ field: { value, onChange } }) => (
+              <input
+                placeholder={placeholder}
+                value={value}
+                onChange={onChange}
+                {...rest}
+                className="bg-transparent text-white border-0 h-[30px] w-[100%] outline-none"
+              />
+            )}
+          />
         </div>
       </div>
       {errorMessage ? (
